@@ -160,7 +160,7 @@ body{
   .attribution a {
     color: hsl(228, 45%, 44%);
   }
-@media screen and (max-width:1440px){
+@media screen and (max-width:1399px){
     body{
         display: block;
     }

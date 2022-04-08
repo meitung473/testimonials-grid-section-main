@@ -8,11 +8,12 @@ This is a solution to the [Testimonials grid section challenge on Frontend Mento
   ![Desktop]( https://github.com/meitung473/testimonials-grid-section-main/blob/gh-pages/readmeImage/desktop.jpeg)
  
 - Mobile  
-  ![Mobile](https://github.com/meitung473/testimonials-grid-section-main/blob/gh-pages/readmeImage/mobile.jpeg)
+  <img src="https://github.com/meitung473/testimonials-grid-section-main/blob/gh-pages/readmeImage/mobile.jpeg" alt="Mobile" width="500px" height="auto">
+
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/testimonialsgridsectionmain-with-cssgrid-HkktQDTXc)
 - [Live Site URL](https://meitung473.github.io/testimonials-grid-section-main/)
 
 ## My process
