@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    
+}
+:root{
+    --card-1: hsl(263, 55%, 52%);
+    --card-2: hsl(217, 19%, 35%);
+    --card-5: hsl(219, 29%, 14%);
+    --card-rest: hsl(0, 0%, 100%);
+
+    --avatar-circle:#A775F1;
+    --dark-txt-primary:hsl(0, 0%, 81%);
+    --dark-txt-primary_50:hsla(0, 0%, 81%,.5);
+    --dark-txt-primary_70:hsla(0, 0%, 81%,.7);
+
+    --light-txt-primary:hsl(217, 19%, 35%);
+    --light-txt-primary_50:hsla(217, 19%, 35%,.5);
+    --light-txt-primary_70:hsla(217, 19%, 35%,.7);
+}
+html,body{
+    height: 100%;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    line-height: 1.4;
+    font-size: 13px;
+}
+
+.container{
+    max-width: 1440px;
+    box-sizing: border-box;
+    padding: 50px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(1,1fr);
+    grid-gap: 30px;
+    align-content: center;
+}
+.card{
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 20px 4px rgba(0,0,0,.1);
+}
+.card:nth-child(1){
+    grid-column: 1/3;
+    grid-row: 1/2;
+    background-color:var(--card-1);
+    position: relative;
+    z-index: 1;
+   
+}
+.card:nth-child(1):after{
+    content:'';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background:url('./images/bg-pattern-quotation.svg') center center/contain no-repeat;
+    top:0;
+    right:0;
+    transform: translateX(-100px);
+    z-index: -1;
+}
+.card:nth-child(2){
+    grid-column: 3/4;
+    background-color:var(--card-2);
+}
+.card:nth-child(3){
+    background-color:var(--card-rest);
+}
+.card:nth-child(4){
+    order: 5;
+    grid-column: 2/4;
+    background-color:var(--card-5);
+}
+.card:nth-child(5){
+    order: 3;
+    grid-column: 4/ 5;
+    grid-row: 1/3;
+    background-color:var(--card-rest);
+}
+
+
+.header{
+    display: grid;
+    grid-template-areas: 
+        "avatar name"
+        "avatar status"
+    ;
+    justify-content: start;
+    grid-gap: 0 10px;
+}
+.header_avatar{
+    box-sizing: border-box;
+    grid-area: avatar;
+    border-radius: 50%;
+    vertical-align: bottom;
+    object-fit: contain;
+    height: 40px;
+}
+.header_name{
+    grid-area: name;
+    align-self: end;
+    justify-self: start;
+    color:var(--light-txt-primary);
+}
+.header_status{
+    grid-area: status;
+    color: var(--light-txt-primary_50);
+}
+.review{
+    padding: 15px 0;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+
+}
+.review h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom:1rem;
+  
+}
+.review p{
+    margin-top: auto;
+    color: hsl(210, 46%, 95%);
+    font-size: 1.1rem;
+    color:var(--light-txt-primary_70);
+}
+.card:not(:nth-child(3),:nth-child(5)) .header_name{
+    color: var(--dark-txt-primary);
+}
+.card:not(:nth-child(3),:nth-child(5)) .header_status{
+    color: var(--dark-txt-primary_50);
+}
+.card:not(:nth-child(3),:nth-child(5)) .review h2{
+    color: var(--card-rest);
+}
+.card:not(:nth-child(3),:nth-child(5)) .review p{
+    color: var(--dark-txt-primary_70);
+}
+.card:nth-child(1) .header_avatar,.card:nth-child(4) .header_avatar{
+    outline: 3px solid var(--avatar-circle);
+}
+
+
+
+/* ---------------------------- */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+@media screen and (max-width:1440px){
+    body{
+        display: block;
+    }
+    .container{
+        padding: 30px;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(1,1fr);
+        grid-gap: 30px;
+        align-content: center;
+    }
+    .container .card:nth-child(n){
+        grid-column: auto;
+        grid-row: auto;
+    }
+    .card:nth-child(4),.card:nth-child(5){
+        order: 0;
+    }
+}
+@media screen and (max-width:640px){
+    .container{
+        grid-template-columns: repeat(1,1fr);
+        grid-auto-rows: auto;
+    }
+    .card:nth-child(1):after{
+        transform: translateX(-50px);
+    }
+   
+}
