@@ -87,7 +87,7 @@ body{
 }
 
 
-.header{
+.info{
     display: grid;
     grid-template-areas: 
         "avatar name"
@@ -96,7 +96,7 @@ body{
     justify-content: start;
     grid-gap: 0 10px;
 }
-.header_avatar{
+.info_avatar{
     box-sizing: border-box;
     grid-area: avatar;
     border-radius: 50%;
@@ -104,13 +104,13 @@ body{
     object-fit: contain;
     height: 40px;
 }
-.header_name{
+.info_name{
     grid-area: name;
     align-self: end;
     justify-self: start;
     color:var(--light-txt-primary);
 }
-.header_status{
+.info_status{
     grid-area: status;
     color: var(--light-txt-primary_50);
 }
@@ -133,10 +133,10 @@ body{
     font-size: 1.1rem;
     color:var(--light-txt-primary_70);
 }
-.card:not(:nth-child(3),:nth-child(5)) .header_name{
+.card:not(:nth-child(3),:nth-child(5)) .info_name{
     color: var(--dark-txt-primary);
 }
-.card:not(:nth-child(3),:nth-child(5)) .header_status{
+.card:not(:nth-child(3),:nth-child(5)) .info_status{
     color: var(--dark-txt-primary_50);
 }
 .card:not(:nth-child(3),:nth-child(5)) .review h2{
@@ -145,7 +145,7 @@ body{
 .card:not(:nth-child(3),:nth-child(5)) .review p{
     color: var(--dark-txt-primary_70);
 }
-.card:nth-child(1) .header_avatar,.card:nth-child(4) .header_avatar{
+.card:nth-child(1) .info_avatar,.card:nth-child(4) .info_avatar{
     outline: 3px solid var(--avatar-circle);
 }
 
@@ -187,5 +187,4 @@ body{
     .card:nth-child(1):after{
         transform: translateX(-50px);
     }
-   
 }
